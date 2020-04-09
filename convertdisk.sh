@@ -29,7 +29,7 @@ read -r new_path_file
 echo ""
 echo "Thanks! Conversion will start shortly."
 echo ""
-qemu-img convert -o qcow2 $orig_path $new_path_file
+qemu-img convert -O qcow2 $orig_path $new_path_file
 echo "Conversion Complete! Please check that your file is there :]"
 echo "" 
 printf 'Press [ENTER] to go back to main menu...'
