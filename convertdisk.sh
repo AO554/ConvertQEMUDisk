@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # https://github.com/ao554/ConvertQEMUDisk
+# I hate dos files and needing to convert them
 
 # Check if qemu-img is installed
 if ! type qemu-img &>/dev/null; then echo "Error: qemu-img is not installed or not in PATH. Exiting."; exit 1; fi
