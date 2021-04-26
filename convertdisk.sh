@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://github.com/ao554/ConvertQEMUDisk
 
 # Check if qemu-img is installed
 if ! type qemu-img &>/dev/null; then echo "Error: qemu-img is not installed or not in PATH. Exiting."; exit 1; fi
@@ -25,8 +26,8 @@ converter() {
 while true; do
 	unset main_option
 	clear
-	echo -e "\nHarri's Simplified Disk Converter\nFor QEMU Related tasks\n"
-	echo -e "\nWhat would you like to do?\n"
+	echo -e "\nAO's QEMU Converter\nFor Migrating Virtual Disk tasks\n"
+	echo -e "\n[What would you like to do?]\n"
 	echo "(1) Convert Hyper-V to QCOW2"
 	echo -e "(2) Quit\n"
 
