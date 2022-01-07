@@ -10,3 +10,5 @@ Version: ``1.02 - VMware Support``
 
 - Planning Partial Rewrite
 (My parts of this code are just terrible)
+- Proxmox Support on a better scale
+- VirtualBox Support
