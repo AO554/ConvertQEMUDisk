@@ -11,12 +11,12 @@ compressQCOW2() {
 	# Compress qcow2 image
 
 	unset orig_path_compress1 compress_final_path
-	echo -e "\n==Compress QCOW2 Image==\n"
+	echo -e "\n==(Compress QCOW2 Image)==\n"
 
 	# Original File Stuff
 	until [[ -e "$orig_path_compress1" ]]; do
 		echo -e "[NOTICE] This will attempt to compress your Virtual Disk."
-		echo -e "[NOTICE] PLEASE MAKE SURE YOU HAVE A BACKUP."
+		echo -e "[NOTICE] PLEASE MAKE SURE YOU HAVE A BACKUP.\n"
 		read -rep "Enter the path to the original file: " orig_path_compress1
 		[[ "$orig_path_compress1" == '~'* ]] && orig_path_compress1="$HOME${orig_path_compress/\~/}"
 		[[ ! -e "$orig_path_compress1" ]] && echo -e "[ERROR] File does not exist. Please try again.\n"
@@ -37,13 +37,13 @@ compressQCOW2() {
 # Converts a VMware VMDK (Probably for the ESXi Nerds)
 converterVMWare() {
 	unset orig_path_vmwow new_path_file_vmwow
-	echo -e "\n==VMware to QCOW2 Conversion==\n"
+	echo -e "\n==(VMware to QCOW2 Conversion)==\n"
 	# AAAAAAAAAA WHY THE FUCK IS NONE OF THIS COMMENTED WHAT THE FUCK IS GOING ON
 	# THANK YOU GITHUB COPILOT FOR FINISHING THIS SHIT
 
 	# Path finding bullshit
 	until [[ -e "$orig_path_vmwow" ]]; do
-		echo -e "\n[NOTICE] Please ensure that if you are using a Split VMDK, All the files are in the folder you're sourcing from."
+		echo -e "[NOTICE] Please ensure that if you are using a Split VMDK, All the files are in the folder you're sourcing from."
 		read -rep "Enter the Path to the Main VMDK File: " orig_path_vmwow
 		[[ "$orig_path_vmwow" == '~'* ]] && orig_path_vmwow="$HOME${orig_path_vmwow/\~/}"
 		[[ ! -e "$orig_path_vmwow" ]] && echo -e "[ERROR] File does not exist. Please try again.\n"
@@ -62,7 +62,7 @@ converterVMWare() {
 # Converts a Hyper-V Disk using qemu-img (assuming its installed)
 converterHyperV() {
 	unset orig_path new_path_file
-	echo -e "\n==Hyper-V to QCOW2 Conversion==\n"
+	echo -e "\n==(Hyper-V to QCOW2 Conversion)==\n"
 
 	until [[ -e "$orig_path" ]]; do
 		read -rep "Enter the Path to the vhd/vhdx file: " orig_path
